@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Miller — Paladin Plumbing</title>
+<style>
+  :root {
+    --navy: #1b2436;
+    --navy-deep: #10151f;
+    --copper: #c1662f;
+    --copper-light: #e08a4f;
+    --cream: #f4efe6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--copper);
+    margin: 0 auto 20px;
+    display: block;
+    object-fit: cover;
+  }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: 0.5px;
+  }
+  .title {
+    color: var(--copper-light);
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+  .org {
+    color: #a9b0bf;
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+  }
+  .status {
+    font-size: 0.85rem;
+    color: #a9b0bf;
+    margin-bottom: 20px;
+    min-height: 1.2em;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary {
+    background: var(--copper);
+    color: var(--cream);
+  }
+  .btn-row {
+    display: flex;
+    gap: 10px;
+  }
+  .btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: var(--cream);
+    border: 1px solid rgba(255,255,255,0.2);
+    flex: 1;
+  }
+  .footer {
+    margin-top: 24px;
+    font-size: 0.75rem;
+    color: #6b7383;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img src="logo.jpg" alt="Paladin Plumbing" class="logo">
+    <h1>Alex Miller</h1>
+    <div class="title">Technician</div>
+    <div class="org">Paladin Plumbing LLC</div>
+    <div class="status" id="status">Saving Alex's contact…</div>
+
+    <a id="save-btn" href="alex-miller.vcf" download="Alex Miller - Paladin Plumbing.vcf" class="btn btn-primary">Save Contact</a>
+
+    <div class="btn-row">
+      <a href="tel:8644773242" class="btn btn-secondary">Call Office</a>
+      <a href="tel:8644856649" class="btn btn-secondary">Call Cell</a>
+    </div>
+    <div class="btn-row">
+      <a href="sms:8644856649" class="btn btn-secondary">Text</a>
+      <a href="mailto:alex@paladinplumb.com" class="btn btn-secondary">Email</a>
+    </div>
+
+    <div class="footer">Paladin Plumbing LLC · Inman, SC</div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      document.getElementById('status').textContent = "Tap Save Contact if it didn't download automatically";
+      document.getElementById('save-btn').click();
+    };
+  </script>
+</body>
+</html>
